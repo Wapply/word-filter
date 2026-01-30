@@ -348,7 +348,7 @@
         return parseInt(str.replace(/U\$S|\$/gi, "").replace(/[.,\s]/g, ""), 10);
     }
 
-    function toggleVisto ✓(id, btn, span) {
+    function toggleVisto(id, btn, span) {
         if (seenApartments.includes(id)) {
             seenApartments = seenApartments.filter(a => a !== id);
             btn.classList.remove('active');
@@ -358,7 +358,7 @@
             seenApartments.push(id);
             btn.classList.add('active');
             span.classList.add('address-seen');
-            btn.textContent = "âœ“";
+            btn.textContent = "✓";
         }
         GM_setValue('seen_apartments', seenApartments);
     }
@@ -444,7 +444,7 @@
                             btn.onclick = (e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
-                                toggleVisto ✓(addrId, btn, span);
+                                toggleVisto(addrId, btn, span);
                             };
                             fragment.appendChild(span);
                             fragment.appendChild(btn);
@@ -484,13 +484,13 @@
     /* ===== UI ELEMENTS ===== */
     function setupUI() {
         const btn = document.createElement("button");
-        btn.textContent = "âš™";
+        btn.textContent = "⚙";
         btn.id = "rf-settings-btn";
         btn.style.cssText = "position:fixed; bottom:10px; right:10px; z-index:999999; padding:8px; border-radius:8px; cursor:pointer; background:#222; color:#fff; border:1px solid #555;";
         document.body.appendChild(btn);
 
         const updateBtn = document.createElement("button");
-        updateBtn.textContent = "ðŸ”„";
+        updateBtn.textContent = "🔄";
         updateBtn.style.cssText = "position:fixed; bottom:55px; right:10px; z-index:999999; padding:8px; border-radius:50%; cursor:pointer; background:black; color:white; border:1px solid white; font-size:14px;";
         updateBtn.onclick = () => window.open("https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js", "_blank");
         document.body.appendChild(updateBtn);
@@ -510,7 +510,7 @@
                     const row = document.createElement("div");
                     row.style.margin = "2px 0";
                     row.innerHTML = `<span style="display:inline-block; width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${f}</span>
-                                     <button style="background:red; color:white; border:none; border-radius:3px; cursor:pointer;" data-c="${color}" data-i="${i}">âœ–</button>`;
+                                     <button style="background:red; color:white; border:none; border-radius:3px; cursor:pointer;" data-c="${color}" data-i="${i}">✖</button>`;
                     panel.appendChild(row);
                 });
                 const input = document.createElement("input");
