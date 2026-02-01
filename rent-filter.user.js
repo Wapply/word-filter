@@ -434,8 +434,11 @@
     const LIMITE = 780000;
     const regexMontos = /(?:(?:U\$S|\$)\s?)?(?:\d{1,3}(?:[.,]\d{3})+|\d{6,})(?!\d)/gi;
 
+    // Helper to escape special regex characters
+    const escapeRegex = (str) => str.replace(/[.*+?^$${}()|[\]\\]/g, '\\$&');
+
     // Improved Regex to handle "al", commas, and spaces
-    const regexDireccion = new RegExp(`\\b(${STREETS.join("|")})\\s*(?:,\\s*|al\\s+|al\\s*,\\s*)*(\\d+)\\b`, "gi");
+    const regexDireccion = new RegExp(`\\b(${STREETS.map(escapeRegex).join("|")})\\s*(?:,\\s*|al\\s+|al\\s*,\\s*)*(\\d+)\\b`, "gi");
 
     // Persistence for 'seen' apartments
     let seenApartments = GM_getValue('seen_apartments', []);
@@ -518,7 +521,7 @@
                 let style = color === "rojo" ? "background:red;color:white;font-weight:bold;" :
                     color === "verde" ? "background:limegreen;color:black;font-weight:bold;" :
                         "background:gold;color:black;font-weight:bold;";
-                filtros[color].forEach(word => applyFilter(new RegExp(`(${word})`, "gi"), color, style));
+                filtros[color].forEach(word => applyFilter(new RegExp(`(${ word })`, "gi"), color, style));
             });
             applyFilter(regexMontos, 'precio', "background:red;color:white;font-weight:bold;");
             applyFilter(regexDireccion, 'direccion', "background:cyan;color:black;", true);
@@ -612,8 +615,8 @@
                 filtros[color].forEach((f, i) => {
                     const row = document.createElement("div");
                     row.style.margin = "2px 0";
-                    row.innerHTML = `<span style="display:inline-block; width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${f}</span>
-                                     <button style="background:red; color:white; border:none; border-radius:3px; cursor:pointer;" data-c="${color}" data-i="${i}">✖</button>`;
+                    row.innerHTML = `< span style = "display:inline-block; width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" > ${ f }</span >
+    <button style="background:red; color:white; border:none; border-radius:3px; cursor:pointer;" data-c="${color}" data-i="${i}">✖</button>`;
                     panel.appendChild(row);
                 });
                 const input = document.createElement("input");
