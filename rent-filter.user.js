@@ -5,7 +5,7 @@
 // @namespace    http://tampermonkey.net/
 // @updateURL    https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js
 // @downloadURL  https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js
-// @version      5.0
+// @version      5.2
 // @match        *://*/*
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -521,7 +521,7 @@
                 let style = color === "rojo" ? "background:red;color:white;font-weight:bold;" :
                     color === "verde" ? "background:limegreen;color:black;font-weight:bold;" :
                         "background:gold;color:black;font-weight:bold;";
-                filtros[color].forEach(word => applyFilter(new RegExp(`(${ word })`, "gi"), color, style));
+                filtros[color].forEach(word => applyFilter(new RegExp(`(${word})`, "gi"), color, style));
             });
             applyFilter(regexMontos, 'precio', "background:red;color:white;font-weight:bold;");
             applyFilter(regexDireccion, 'direccion', "background:cyan;color:black;", true);
@@ -615,7 +615,7 @@
                 filtros[color].forEach((f, i) => {
                     const row = document.createElement("div");
                     row.style.margin = "2px 0";
-                    row.innerHTML = `< span style = "display:inline-block; width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" > ${ f }</span >
+                    row.innerHTML = `< span style = "display:inline-block; width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" > ${f}</span >
     <button style="background:red; color:white; border:none; border-radius:3px; cursor:pointer;" data-c="${color}" data-i="${i}">✖</button>`;
                     panel.appendChild(row);
                 });
