@@ -5,7 +5,7 @@
 // @namespace    http://tampermonkey.net/
 // @updateURL    https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js
 // @downloadURL  https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js
-// @version      4.7
+// @version      4.8
 // @match        *://*/*
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -258,18 +258,13 @@
         "LA PAMPA", "LA RIOJA", "LITUANIA", "LOS TALA", "LABARDEN", "MENENDEZ", "MERCEDES", "MISIONES",
         "MOCOBIES", "MONSALVO", "LA LAURA", "LA LEGUA", "NECOCHEA", "NOGUEIRA", "NORBERTO", "PARAGUAY",
         "PRINGLES", "PUCO YAN", "PUELCHES", "SAN JUAN", "RUMEN CO", "VALENCIA", "VERONICA", "VIAMONTE",
-        "173 BIS", "175 BIS", "177 BIS", "179 BIS", "183 BIS", "211 BIS", "270 BIS", "272 BIS",
-        "433 BIS", "ACACIAS", "ADRIANA", "CALLE 9", "CAROYAS", "CASEROS", "CECILIA", "CERRITO",
+        "ACACIAS", "ADRIANA", "CALLE 9", "CAROYAS", "CASEROS", "CECILIA", "CERRITO",
         "CALLE 2", "248 BIS", "CORDOBA", "DANIELA", "709 BIS", "CALLE 6", "CALLE 8", "DOMINGO",
-        "DOROTEA", "DORREGO", "ECUADOR", "CLAUDIA", "HUARPES", "IGNACIO", "711 BIS", "LA TABA",
+        "DOROTEA", "DORREGO", "ECUADOR", "CLAUDIA", "HUARPES", "IGNACIO", "LA TABA",
         "EUGENIA", "LUCANIA", "LUCIANO", "697 BIS", "HILARIO", "MANGORE", "PIERINA", "PILAGAS",
         "PIÑACAL", "POLONIA", "POSADAS", "PASTEUR", "RICARDO", "RODOLFO", "RONDEAU", "TOSCANA",
-        "TUCUMAN", "URUGUAY", "USHUAIA", "ARMANDO", "ARMENIA", "705 BIS", "PAMPERO", "PIONERO",
-        "CALLE 1", "VIEYTES", "181 BIS", "BEATRIZ", "BELGICA", "201 BIS", "203 BIS", "209 BIS",
-        "BERMEJO", "BOLIVAR", "BOLIVIA", "BRAULIO", "BRIGIDA", "CABILDO", "CALLE 0", "ALELIES",
-        "771 BIS", "CALLE14", "CALLE 4", "CALLE 3", "431 BIS", "427 BIS", "429 BIS", "CALLE 5",
-        "507 BIS", "513 BIS", "687 BIS", "CALLE 7", "719 BIS", "791 BIS", "793 BIS", "801 BIS",
-        "819 BIS", "823 BIS", "EL CANO", "EL LAZO", "EL TERO", "ENRIQUE", "CHOCORI", "EVELINA",
+        "TUCUMAN", "URUGUAY", "USHUAIA", "ARMANDO", "ARMENIA", "PAMPERO", "PIONERO",
+        "CALLE 1", "VIEYTES", "BEATRIZ", "BELGICA", "BERMEJO", "BOLIVAR", "BOLIVIA", "BRAULIO", "BRIGIDA", "CABILDO", "CALLE 0", "ALELIES", "EL CANO", "EL LAZO", "EL TERO", "ENRIQUE", "CHOCORI", "EVELINA",
         "FALUCHO", "FORMOSA", "FRANCIA", "GABRIEL", "GALICIA", "GUAYANA", "ISIDORO", "CENTRAL",
         "JACINTO", "JOAQUIN", "LAPRIDA", "LEANDRO", "LEGH II", "LETICIA", "LILIANA", "LINIERS",
         "LOBERIA", "HERMIDA", "MARCELA", "MARIANA", "MARIANO", "LAFQUEN", "PEHUAJO", "MATILDE",
@@ -278,12 +273,9 @@
         "13 BIS", "ALICIA", "ANALIA", "ANGELA", "CANADA", "CANNES", "CARLOS", "CATANI",
         "CEDROS", "DAMIAN", "DANIEL", "DERQUI", "67 BIS", "CAMILO", "TERESA", "HAYDIN",
         "HECTOR", "HUILEN", "ESTELA", "HIGINO", "JUNCAL", "JULIAN", "MARCOS", "PINCEN",
-        "SILVIA", "RAWSON", "ARAGON", "AROMOS", "ARTURO", "11 BIS", "MARLIN", "VERTIZ",
-        "VICTOR", "AYELEP", "VIEDMA", "AYOLAS", "ALTAIR", "FOCA B", "BRASIL", "69 BIS",
-        "TANDIL", "10 BIS", "ADOLFO", "ALSINA", "ALVARO", "14 BIS", "VULCAN", "27 BIS",
-        "WALTER", "22 BIS", "28 BIS", "30 BIS", "32 BIS", "34 BIS", "36 BIS", "39 BIS",
-        "33 BIS", "40 BIS", "41 BIS", "45 BIS", "48 BIS", "63 BIS", "65 BIS", "86 BIS",
-        "89 BIS", "EGIDIO", "EMILIO", "CHUBUT", "ESPAÑA", "FABIAN", "FELIPE", "FRANCA",
+        "SILVIA", "RAWSON", "ARAGON", "AROMOS", "ARTURO", "MARLIN", "VERTIZ",
+        "VICTOR", "AYELEP", "VIEDMA", "AYOLAS", "ALTAIR", "BRASIL",
+        "TANDIL", "ADOLFO", "ALSINA", "ALVARO", "VULCAN", "EGIDIO", "EMILIO", "CHUBUT", "ESPAÑA", "FABIAN", "FELIPE", "FRANCA",
         "FRIULI", "GABOTO", "GENARO", "GENOVA", "GRECIA", "ISABEL", "ITALIA", "ESQUEL",
         "LARREA", "LLIFEN", "MARTIN", "MEJICO", "MIGUEL", "PELAYO", "PERDIZ", "MORENO",
         "NESTOR", "OFELIA", "OVIDIO", "PARANA", "RAQUEL", "SUSANA", "ROSANA", "YAPEYU",
@@ -294,37 +286,14 @@
         "FARRO", "FELIX", "IRALA", "IRENE", "JORGE", "JUJUY", "JULIA", "LAURA",
         "LIDIA", "ESTER", "LULES", "MABEL", "MAIPU", "MARIA", "MARIO", "MARTA",
         "MAURO", "MIRTA", "NOEMI", "TOBAS", "OSCAR", "PABLO", "PEDRO", "SALTA",
-        "SOLIS", "TAGLE", "14 B", "SARA", "13 B", "20 B", "OMBU", "INES",
-        "JUAN", "LUIS", "PERU", "ROSA", "ABEL", "FOCA", "10 B", "11 B",
-        "ACHA", "ALDO", "12 B", "15 B", "16 B", "17 B", "18 B", "19 B",
-        "22 B", "23 B", "24 B", "25 B", "27 B", "30 B", "31 B", "53 B",
-        "55 B", "56 B", "ELSA", "JOSE", "NN A", "NN B", "NORA", "OLGA",
-        "PUAN", "RITA", "RUIZ", "128", "9 B", "9 C", "455", "497",
-        "4 B", "707", "709", "711", "SUR", "509", "719", "693",
-        "6 B", "697", "236", "S/N", "136", "LIA", "238", "699",
-        "232", "234", "250", "843", "204", "206", "101", "103",
-        "105", "107", "208", "142", "159", "160", "194", "196",
-        "198", "1 B", "1 C", "200", "202", "228", "2 B", "2 C",
-        "3 B", "3 C", "429", "445", "447", "449", "451", "453",
-        "457", "459", "461", "463", "465", "467", "471", "473",
-        "475", "477", "479", "481", "483", "485", "487", "489",
-        "491", "493", "495", "499", "4 C", "501", "503", "505",
-        "507", "511", "513", "5 B", "5 C", "797", "6 C", "701",
-        "703", "705", "713", "715", "717", "7 B", "721", "723",
-        "725", "727", "729", "731", "733", "735", "737", "739",
-        "741", "743", "745", "747", "749", "751", "753", "755",
-        "757", "759", "761", "763", "765", "767", "769", "771",
-        "773", "775", "777", "779", "781", "783", "785", "787",
-        "789", "791", "793", "795", "799", "801", "803", "805",
-        "807", "809", "811", "813", "815", "817", "819", "821",
-        "823", "825", "827", "829", "831", "833", "835", "837",
-        "839", "841", "845", "847", "849", "851", "853", "8 B",
-        "EMA", "EVA"
+        "SOLIS", "TAGLE", "SARA", "OMBU", "INES",
+        "JUAN", "LUIS", "PERU", "ROSA", "ABEL", "FOCA", "ACHA", "ALDO", "ELSA", "JOSE", "NN A", "NN B", "NORA", "OLGA",
+        "PUAN", "RITA", "RUIZ", "EMA", "EVA"
     ];
 
     let filtros = {
-        rojo: ["marzo", "diciembre", "estudiantes", "estudiante", "estudiantil", "temporal", "9 meses", "12 meses", "sin gas", "reservado", "temporada", "ICL"],
-        verde: ["24 meses", "lavadero", "garantia propietaria"],
+        rojo: ["marzo", "diciembre", "estudiantes", "estudiante", "estudiantil", "temporal", "9 meses", "12 meses", "sin gas", "reservado", "temporada", "temporario"],
+        verde: ["24 meses", "lavadero", "garantia propietaria", "ICL"],
         amarillo: ["recibo de sueldo", "demostracion de ingresos", "USD"]
     };
 
