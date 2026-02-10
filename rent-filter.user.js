@@ -5,7 +5,7 @@
 // @namespace    http://tampermonkey.net/
 // @updateURL    https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js
 // @downloadURL  https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js
-// @version      5.3
+// @version      5.4
 // @match        *://*/*
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -426,12 +426,12 @@
     ];
 
     let filtros = {
-        rojo: ["marzo", "diciembre", "estudiantes", "estudiante", "estudiantil", "temporal", "9 meses", "12 meses", "sin gas", "reservado", "temporada", "temporario"],
+        rojo: ["marzo", "diciembre", "estudiantes", "estudiante", "estudiantil", "temporal", "9 meses", "12 meses", "sin gas", "reservado", "temporada", "temporario", "alquilado"],
         verde: ["24 meses", "lavadero", "garantia propietaria", "ICL"],
         amarillo: ["recibo de sueldo", "demostracion de ingresos", "USD"]
     };
 
-    const LIMITE = 780000;
+    const LIMITE = 700000;
     const regexMontos = /(?:(?:U\$S|\$)\s?)?(?:\d{1,3}(?:[.,]\d{3})+|\d{6,})(?!\d)/gi;
 
     // Helper to escape special regex characters
