@@ -5,7 +5,7 @@
 // @namespace    http://tampermonkey.net/
 // @updateURL    https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js
 // @downloadURL  https://raw.githubusercontent.com/Wapply/word-filter/main/rent-filter.user.js
-// @version      5.5
+// @version      5.6
 // @match        *://*/*
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -426,7 +426,7 @@
     ];
 
     let filtros = {
-        rojo: ["marzo", "diciembre", "estudiantes", "estudiante", "estudiantil", "temporal", "9 meses", "12 meses", "sin gas", "reservado", "temporada", "temporario", "alquilado", "electrico"],
+        rojo: ["marzo", "diciembre", "estudiantes", "estudiante", "estudiantil", "temporal", "9 meses", "12 meses", "sin gas", "reservado", "temporada", "temporario", "alquilado", "eléctrico", "electrico"],
         verde: ["24 meses", "lavadero", "garantia propietaria", "disponible", "ICL"],
         amarillo: ["recibo de sueldo", "demostracion de ingresos", "USD"]
     };
